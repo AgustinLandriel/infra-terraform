@@ -1,0 +1,27 @@
+# State files — tienen secrets (passwords, ARNs, IPs internas). NUNCA se versionan.
+*.tfstate
+*.tfstate.*
+
+# Directorio de providers descargados (pesado, se regenera con terraform init)
+.terraform/
+.terraform.lock.hcl
+
+# Variables con valores reales/secrets — versioná solo el .example
+*.tfvars
+!*.tfvars.example
+
+# Logs de crash
+crash.log
+crash.*.log
+
+# Plan files (si los generás con -out=plan.tfplan)
+*.tfplan
+
+# Override files locales (para testear cambios sin tocar el .tf real)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Si versionás el bootstrap con Opción A, agregá la excepción explícita:
+# !bootstrap/terraform.tfstate
