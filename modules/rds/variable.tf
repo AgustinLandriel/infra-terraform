@@ -11,7 +11,7 @@ variable "allocated_storage" {
 }
 
 variable "engine_version" {
-  default = "15.4"
+  default = "16"
 }
 
 variable "subnet_ids" {
