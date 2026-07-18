@@ -27,9 +27,9 @@ resource "aws_db_instance" "postgres" {
   db_subnet_group_name   = aws_db_subnet_group.postgres-subnet-group.name
   vpc_security_group_ids = var.vpc_security_group_ids
 
-  db_name  = local.postgres_secret.dbname
-  username = local.postgres_secret.username
-  password = local.postgres_secret.password
+  db_name  = local.postgres_secret.POSTGRES_DB
+  username = local.postgres_secret.POSTGRES_USER
+  password = local.postgres_secret.POSTGRES_PASSWORD
 
   publicly_accessible     = false
   backup_retention_period = 7

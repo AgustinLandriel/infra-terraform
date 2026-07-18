@@ -88,37 +88,9 @@ resource "aws_iam_role" "github_actions_terraform" {
   })
 }
 
-resource "aws_iam_role_policy" "github_actions_terraform" {
-  name = "terraform-state-access"
-  role = aws_iam_role.github_actions_terraform.id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "s3:GetObject",
-          "s3:PutObject",
-          "s3:DeleteObject",
-          "s3:ListBucket"
-        ]
-        Resource = [
-          aws_s3_bucket.terraform_state.arn,
-          "${aws_s3_bucket.terraform_state.arn}/*"
-        ]
-      },
-      {
-        Effect = "Allow"
-        Action = [
-          "dynamodb:GetItem",
-          "dynamodb:PutItem",
-          "dynamodb:DeleteItem"
-        ]
-        Resource = aws_dynamodb_table.lock_table.arn
-      }
-    ]
-  })
+resource "aws_iam_role_policy_attachment" "github_actions_terraform" {
+  role       = aws_iam_role.github_actions_terraform.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
 ## DYNAMODB TABLE FOR STATE LOCKING
