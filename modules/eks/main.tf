@@ -2,13 +2,11 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 21.0"
 
-  cluster_name    = var.cluster_name
-  cluster_version = var.cluster_version
+  name               = var.cluster_name
+  kubernetes_version = var.cluster_version
 
   vpc_id     = var.vpc_id
   subnet_ids = var.subnet_ids
-
-  enable_irsa = true
 
   eks_managed_node_groups = {
     standard_workers = {
@@ -18,6 +16,4 @@ module "eks" {
       desired_size   = var.node_desired_size
     }
   }
-
-  cluster_endpoint_public_access = true
 }
