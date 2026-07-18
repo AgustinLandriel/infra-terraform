@@ -26,6 +26,10 @@ variable "skip_final_snapshot" {
   default = true
 }
 
+variable "backup_retention_period" {
+  default = 0
+}
+
 variable "secret" {
   type        = string
   description = "AWS Secret Manager"

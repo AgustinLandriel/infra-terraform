@@ -32,6 +32,6 @@ resource "aws_db_instance" "postgres" {
   password = local.postgres_secret.POSTGRES_PASSWORD
 
   publicly_accessible     = false
-  backup_retention_period = 7
+  backup_retention_period = var.backup_retention_period
   skip_final_snapshot     = var.skip_final_snapshot
 }
