@@ -7,16 +7,12 @@
 .terraform.lock.hcl
 
 # Variables con valores reales/secrets — versioná solo el .example
-*.tfvars
-!*.tfvars.example
-!environments/staging/terraform.tfvars
 
 # Logs de crash
 crash.log
 crash.*.log
 
 # Plan files (si los generás con -out=plan.tfplan)
-*.tfplan
 
 # Override files locales (para testear cambios sin tocar el .tf real)
 override.tf
