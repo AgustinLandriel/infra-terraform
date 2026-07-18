@@ -17,6 +17,7 @@ variable "region" {
 variable "private_subnets" {
   type = set(string)
 }
+
 variable "public_subnets" {
   type = set(string)
 }
