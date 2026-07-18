@@ -1,5 +1,5 @@
 output "endpoint" {
-  value = aws_elasticache_cluster.elasticache-voting.cache_nodes[1].address
+  value = aws_elasticache_cluster.elasticache-voting.cache_nodes[0].address
 }
 
 output "port" {

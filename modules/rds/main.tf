@@ -11,8 +11,6 @@ locals {
 }
 
 
-
-
 resource "aws_db_subnet_group" "postgres-subnet-group" {
   name       = "${var.identifier}-subnets"
   subnet_ids = var.subnet_ids

@@ -9,3 +9,18 @@ variable "cluster_name" {
 variable "node_instance_type" {
   default = "t3.small"
 }
+
+variable "region" {
+  type = set(string)
+}
+
+variable "private_subnets" {
+  type = set(string)
+}
+variable "public_subnets" {
+  type = set(string)
+}
+
+variable "cidr" {
+  type = string
+}

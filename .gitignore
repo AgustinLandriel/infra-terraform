@@ -22,6 +22,6 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
+.claude/
 # Si versionás el bootstrap con Opción A, agregá la excepción explícita:
 # !bootstrap/terraform.tfstate
