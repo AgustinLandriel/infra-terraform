@@ -33,6 +33,15 @@ module "eks" {
   node_desired_size  = 1
 }
 
+resource "aws_vpc_security_group_ingress_rule" "node_to_cluster_api" {
+  security_group_id            = module.eks.cluster_primary_security_group_id
+  referenced_security_group_id = module.eks.node_security_group_id
+  from_port                    = 443
+  to_port                      = 443
+  ip_protocol                  = "tcp"
+  description                  = "Allow nodes to reach cluster API"
+}
+
 resource "aws_security_group" "postgres" {
   name_prefix = "${var.cluster_name}-postgres-"
   vpc_id      = module.vpc.vpc_id
