@@ -7,7 +7,7 @@ variable "cluster_name" {
 }
 
 variable "node_instance_type" {
-  default = "t4g.micro"
+  default = "t4g.small"
 }
 
 variable "node_ami_type" {

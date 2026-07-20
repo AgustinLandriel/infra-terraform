@@ -15,7 +15,7 @@ variable "subnet_ids" {
 }
 
 variable "node_instance_type" {
-  default = "t3.medium"
+  default = "t4g.small"
 }
 
 variable "node_ami_type" {
