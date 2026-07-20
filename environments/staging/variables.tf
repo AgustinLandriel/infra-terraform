@@ -10,6 +10,10 @@ variable "node_instance_type" {
   default = "t4g.micro"
 }
 
+variable "node_ami_type" {
+  default = "AL2023_ARM_64_STANDARD"
+}
+
 variable "region" {
   type = set(string)
 }

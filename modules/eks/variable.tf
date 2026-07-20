@@ -18,6 +18,10 @@ variable "node_instance_type" {
   default = "t3.medium"
 }
 
+variable "node_ami_type" {
+  default = "AL2023_x86_64_STANDARD"
+}
+
 variable "node_min_size" {
   default = 2
 }
