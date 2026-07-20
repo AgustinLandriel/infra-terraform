@@ -7,7 +7,7 @@ variable "cluster_name" {
 }
 
 variable "node_instance_type" {
-  default = "t3.small"
+  default = "t4g.micro"
 }
 
 variable "region" {
