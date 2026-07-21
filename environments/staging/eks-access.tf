@@ -13,6 +13,20 @@ resource "aws_iam_role" "eks_admin" {
   })
 }
 
+resource "aws_iam_role_policy" "eks_admin_describe" {
+  name = "eks-describe"
+  role = aws_iam_role.eks_admin.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["eks:DescribeCluster", "eks:ListClusters"]
+      Resource = "*"
+    }]
+  })
+}
+
 resource "aws_eks_access_entry" "eks_admin" {
   cluster_name  = module.eks.cluster_name
   principal_arn = aws_iam_role.eks_admin.arn
