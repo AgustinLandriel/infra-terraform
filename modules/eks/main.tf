@@ -9,6 +9,7 @@ module "eks" {
   subnet_ids = var.subnet_ids
 
   enable_cluster_creator_admin_permissions = true
+  endpoint_public_access                   = true
 
   addons = {
     coredns    = { most_recent = true }
