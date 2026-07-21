@@ -19,7 +19,7 @@ variable "node_instance_type" {
 }
 
 variable "node_ami_type" {
-  default = "AL2023_x86_64_STANDARD"
+  default = "AL2023_ARM_64_STANDARD"
 }
 
 variable "node_min_size" {
